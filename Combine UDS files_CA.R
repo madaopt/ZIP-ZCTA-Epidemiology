@@ -13,12 +13,16 @@
 # I LOVE PRESSURE #
 ###################
 
+library(dplyr)
+library(tidyverse)
+library(readxl)
+
+mypath <- #insert file path
 #Download all files into a folder and read in their names
-all.files <- list.files("/Users/madaopt/Library/CloudStorage/OneDrive-UniversityofSouthernCalifornia/EVAC study/Data/Boundries/ZCTA/UDS crosswalk/", pattern="UDS.xlsx")  #2010  has a different structure, add later
+all.files <- list.files(mypath, pattern="UDS.xlsx")  #2010  has a different structure, add later
 
 # List years we want to combine 
 year.list <- c(2011:2022)
-
 
 #######################################
 # Check data: can skip this 
@@ -28,7 +32,7 @@ temp <- NULL
 temp.zcta <- NULL
 temp.zip <- NULL
 for (i in 1:length(all.files)) {
-  try <- read_excel(paste0("/Users/madaopt/Library/CloudStorage/OneDrive-UniversityofSouthernCalifornia/EVAC study/Data/Boundries/ZCTA/UDS crosswalk/",all.files[i]), sheet = 1)
+  try <- read_excel(paste0(mypath,all.files[i]), sheet = 1)
   if (i<=3 | i==5 ) {  #col name changed...
     try <- try %>% filter(StateAbbr %in% "CA") %>% dplyr::select(c("ZIP","ZCTA_USE"))
     zcta <- as.data.frame(unique(try$ZCTA_USE)) %>% rename("ZCTA"="unique(try$ZCTA_USE)")  %>% mutate(year=year.list[i]) 
@@ -38,7 +42,6 @@ for (i in 1:length(all.files)) {
     temp <- rbind(temp, nrows)
     temp.zcta <- rbind(temp.zcta, zcta)
     temp.zip <- rbind(temp.zip, zip)
-    #temp <- merge(temp, try, by="ZCTA_USE", all = T)
   }else if (i==12){ #col name changed...again...
     try <- try %>% filter(STATE %in% "CA") %>% dplyr::select(c("ZIP_CODE","zcta"))
     zcta <- as.data.frame(unique(try$zcta)) %>% rename("ZCTA"="unique(try$zcta)")  %>% mutate(year=year.list[i]) 
@@ -81,7 +84,7 @@ temp.zip %>% group_by(year) %>% summarize(n=n())  #zip changes and it changes mo
 #Create a dataset combining all files - in the code I subset to CA only, but you can delete that line and create a national file 
 temp <- NULL
 for (i in 1:length(all.files)) {
-  try <- read_excel(paste0("/Users/madaopt/Library/CloudStorage/OneDrive-UniversityofSouthernCalifornia/EVAC study/Data/Boundries/ZCTA/UDS crosswalk/",all.files[i]), sheet = 1)
+  try <- read_excel(paste0(mypath,all.files[i]), sheet = 1)
   if (i<=3 | i==5 ) { #file name changes...
     try <- try %>% filter(StateAbbr %in% "CA") %>% dplyr::select(c("ZIP","ZCTA_USE")) %>% mutate(year=year.list[i])
   }else if (i==12){ #col name changed...again...
