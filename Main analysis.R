@@ -1,9 +1,9 @@
 #####################################################################
 # Code for the analysis in:
 # title: ZIP Code and ZIP Code Tabulation Area Linkage: Implications for Bias in Epidemiological Research
-# Last update: 8/08/2024 
-# Update notes: R1 review - adding sensitivity analysis, tables in SDC and new graph; update figure 3
-#
+# Last update: 8/20/2024 
+# Update notes: R1 review - adding sensitivity analysis, tables in SDC and new graph; update figure 3 (8/8/2024)
+# 8/20/24: clean up
 #####################################################################
 # I LOVE PRESSURE #
 ###################

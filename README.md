@@ -9,9 +9,9 @@ Contact: futuchen@usc.edu
 
 ## File directory
 
-* Raw Data: List **websites** of shareable raw data we used; "Crosswalk" folder contains a processed file (UDS_corsswalk_till2022.rds), and the raw crosswalk files downloaded from UDS
+* Raw Data: List **websites** of shareable raw data we used; "Crosswalk" folder contains a processed file (*UDS_corsswalk_till2022.rds*), and the raw crosswalk files downloaded from UDS
 * Example_use crosswalk.R: sample code for using crosswalk files, though researchers can devise other creative ways to summarize their data
-* Main analysis.R: Analysis code for the manuscript.
+* Main analysis.R: Analysis code for the manuscript (including revision & response to reviewers).
 * Combine UDS files_CA.R: Code used to check UDS crosswalk and combine longitudinal years into one file. Processed longitudinal crosswalk for CA is included in *Raw Data/Crosswalk/UDS_corsswalk_till2022.rds*
 
 

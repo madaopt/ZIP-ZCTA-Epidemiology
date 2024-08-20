@@ -3,8 +3,8 @@
 # Supplemental to
 # title: ZIP Code and ZIP Code Tabulation Area Linkage: Implications for Bias in Epidemiological Research
 # Futu Chen; futuchen@usc.edu
-# Last update: 7/23/2024 
-# Update notes: 
+# Last update: 8/20/2024 
+# Update notes: clean up
 #
 #####################################################################
 # It's Ezzzzzy, trust me #
