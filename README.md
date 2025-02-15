@@ -1,6 +1,6 @@
 # ZIP Code and ZIP Code Tabulation Area Linkage: Implications for Bias in Epidemiological Research
 
-Welcome, this page is for our publication in *Epidemiology*; [citation coming up soon]
+Welcome, this page is for our publication in *Epidemiology*; Chen, F., MacDonald, B., Xu, Y., Franco, W., Campos, A., Palinkas, L. A., ... & Garcia, E. (2025). ZIP Code and ZIP Code Tabulation Area Linkage: Implications for Bias in Epidemiologic Research. *Epidemiology, 36*(1), 115-118.
  
 The paper uses public data and data obtained from IPUMS (http://doi.org/10.18128/D050.V18.0). IPUMS does not allow redistribution but is publicly available. The data citation in the main article has the full URL. UDS crosswalk data link was redirected to another website in April, 2024, and users can no longer see historical crosswalks. We pre-downloaded those files and shared in under **Raw Data**. In addition, please find our code for data cleaning and analysis. 
  
